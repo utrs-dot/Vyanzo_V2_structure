@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-vyanzo-blue: #0A2540;
+  --color-vyanzo-light-blue: #1D4ED8;
+  --color-vyanzo-gold: #EAB308;
+  --color-vyanzo-gray: #F8FAFC;
+  --color-vyanzo-border: rgba(10, 37, 64, 0.1);
+}
+
+@layer base {
+  body {
+    @apply font-sans text-vyanzo-blue bg-white antialiased;
+  }
+  
+  h1 {
+    @apply font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight;
+  }
+  
+  h2 {
+    @apply font-serif text-3xl md:text-5xl leading-[1.2] tracking-tight;
+  }
+  
+  h3 {
+    @apply font-sans text-xl md:text-2xl font-bold tracking-tight;
+  }
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.section-label {
+  @apply flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] font-bold mb-10 text-vyanzo-gold;
+}
+
+.section-label::before {
+  content: "";
+  @apply w-2 h-2 rounded-full bg-vyanzo-gold;
+}
+
+.btn-gold {
+  @apply bg-vyanzo-gold text-vyanzo-blue px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-vyanzo-blue hover:text-white transition-all duration-300;
+}
+
+.btn-outline {
+  @apply border-2 border-vyanzo-blue px-10 py-5 text-sm font-bold uppercase tracking-widest hover:bg-vyanzo-blue hover:text-white transition-all duration-300;
+}
+
+.oversized-number {
+  @apply font-serif italic text-[15vw] leading-none opacity-5 select-none pointer-events-none;
+}
+
+.product-card-hover {
+  @apply transition-all duration-500 hover:shadow-2xl hover:-translate-y-2;
+}
